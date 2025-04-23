@@ -2,6 +2,9 @@ import Section from "../components/Section";
 import Layout from "../components/Layout";
 import RecentTransactions from "../components/RecentTransactions";
 import CreditCardList from "../components/CreditCardList";
+import ExpenseStatisticsChart from "../components/ExpenseStatistics";
+import BalanceHistoryChart from "../components/BalanceHistory";
+import WeeklyActivity from "../components/WeeklyActivity";
 import QuickTransfer from "../components/QuickTransfer";
 
 function Dashboard() {
@@ -22,10 +25,14 @@ function Dashboard() {
         </div>
         <div className="flex flex-wrap gap-4">
           <div className="w-full sm:w-auto sm:flex-2">
-            <Section title="Weekly Activity">Row 1, Column 2</Section>
+            <Section title="Weekly Activity">
+              <WeeklyActivity />
+            </Section>
           </div>
           <div className="w-full sm:w-auto sm:flex-1">
-            <Section title="Expense Statistics">Row 1, Column 2</Section>
+            <Section title="Expense Statistics">
+              <ExpenseStatisticsChart />
+            </Section>
           </div>
         </div>
         <div className="w-full flex flex-wrap gap-4">
@@ -34,8 +41,10 @@ function Dashboard() {
               <QuickTransfer />
             </Section>
           </div>
-          <div className="w-full sm:w-auto sm:flex-5">
-            <Section title="Balance History">Row 1, Column 2</Section>
+          <div className="w-full sm:w-3/5 sm:flex-5">
+            <Section title="Balance History">
+              <BalanceHistoryChart />
+            </Section>
           </div>
         </div>
       </div>
