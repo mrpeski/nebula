@@ -2,6 +2,7 @@ import Section from "../components/Section";
 import Layout from "../components/Layout";
 import RecentTransactions from "../components/RecentTransactions";
 import CreditCardList from "../components/CreditCardList";
+import QuickTransfer from "../components/QuickTransfer";
 
 function Dashboard() {
   return (
@@ -27,9 +28,11 @@ function Dashboard() {
             <Section title="Expense Statistics">Row 1, Column 2</Section>
           </div>
         </div>
-        <div className="flex flex-wrap gap-4">
-          <div className="w-full sm:w-auto sm:flex-3">
-            <Section title="Quick Transfer">Row 1, Column 2</Section>
+        <div className="w-full flex flex-wrap gap-4">
+          <div className="w-full sm:w-2/5 sm:flex-3">
+            <Section title="Quick Transfer">
+              <QuickTransfer />
+            </Section>
           </div>
           <div className="w-full sm:w-auto sm:flex-5">
             <Section title="Balance History">Row 1, Column 2</Section>
