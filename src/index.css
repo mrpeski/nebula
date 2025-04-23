@@ -13,3 +13,21 @@
   --color-soar-green: #41d4a8;
   --color-soar-red: #ff4b4a;
 }
+
+.card-gradient {
+  background: linear-gradient(107.38deg, #5b5a6f 2.61%, #000000 101.2%);
+}
+.card-bottom {
+  content: " ";
+  position: "absolute";
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  margin-left: -24px;
+  margin-right: -24px;
+  padding: 0 24px;
+  height: 70px;
+}
