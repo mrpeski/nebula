@@ -13,52 +13,52 @@ import {
 
 const data = [
   {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
+    name: "Sat",
+    deposit: 4000,
+    withdrawal: 2400,
     amt: 2400,
   },
   {
-    name: "Page B",
-    uv: 3000,
-    pv: 1398,
+    name: "Sun",
+    deposit: 3000,
+    withdrawal: 1398,
     amt: 2210,
   },
   {
-    name: "Page C",
-    uv: 2000,
-    pv: 9800,
+    name: "Mon",
+    deposit: 2000,
+    withdrawal: 9800,
     amt: 2290,
   },
   {
-    name: "Page D",
-    uv: 2780,
-    pv: 3908,
+    name: "Tues",
+    deposit: 2780,
+    withdrawal: 3908,
     amt: 2000,
   },
   {
-    name: "Page E",
-    uv: 1890,
-    pv: 4800,
+    name: "Wed",
+    deposit: 1890,
+    withdrawal: 4800,
     amt: 2181,
   },
   {
-    name: "Page F",
-    uv: 2390,
-    pv: 3800,
+    name: "Thur",
+    deposit: 2390,
+    withdrawal: 3800,
     amt: 2500,
   },
   {
-    name: "Page G",
-    uv: 3490,
-    pv: 4300,
+    name: "Fri",
+    deposit: 3490,
+    withdrawal: 4300,
     amt: 2100,
   },
 ];
 
-const WeeklyActivity: React.FC = (props) => {
+const WeeklyActivity: React.FC = () => {
   return (
-    <div className="p-2 sm:p-4 bg-white sm:rounded-4xl h-[214px] sm:h-[322px]">
+    <div className="p-2 sm:p-4 sm:py-7 bg-white sm:rounded-4xl h-[214px] sm:h-[322px]">
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           width={500}
@@ -70,21 +70,64 @@ const WeeklyActivity: React.FC = (props) => {
             left: 20,
             bottom: 5,
           }}
+          barSize={15}
+          barGap={12}
         >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar
-            dataKey="pv"
-            fill="#8884d8"
-            activeBar={<Rectangle fill="pink" stroke="blue" />}
+          <Legend
+            layout="horizontal"
+            verticalAlign="top"
+            align="right"
+            iconType="circle"
+            iconSize={15}
+            margin={{ top: 0, bottom: 20 }}
+            formatter={(value) => {
+              const capitalizedValue =
+                value.charAt(0).toUpperCase() + value.slice(1);
+              return (
+                <span
+                  style={{
+                    color: "#718EBF",
+                    fontSize: 13,
+                    display: "inline-block",
+                    marginBottom: 16,
+                  }}
+                >
+                  {capitalizedValue}
+                </span>
+              );
+            }}
+          />
+          <CartesianGrid
+            strokeDasharray="0"
+            stroke="#F3F3F5"
+            vertical={false}
+          />
+          <XAxis
+            dataKey="name"
+            tick={{ fill: "#718EBF" }}
+            axisLine={false}
+            tickLine={false}
+            fontSize={13}
+            tickMargin={10}
+          />
+          <YAxis
+            color="#718EBF"
+            axisLine={false}
+            tickLine={false}
+            tick={{ fill: "#718EBF" }}
+            fontSize={13}
           />
           <Bar
-            dataKey="uv"
-            fill="#82ca9d"
-            activeBar={<Rectangle fill="gold" stroke="purple" />}
+            dataKey="withdrawal"
+            isAnimationActive={false}
+            fill="#232323"
+            radius={[10, 10, 10, 10]}
+          />
+          <Bar
+            dataKey="deposit"
+            isAnimationActive={false}
+            fill="#396AFF"
+            radius={[10, 10, 10, 10]}
           />
         </BarChart>
       </ResponsiveContainer>
