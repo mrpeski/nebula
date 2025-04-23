@@ -24,9 +24,9 @@ export default function Layout(props: Props) {
             <div className="flex py-5 items-center gap-x-4  bg-white px-4 sm:gap-x-6 sm:px-6 lg:px-0">
               <SidebarToggle />
               <div className="flex flex-1 gap-x-4 justify-between items-center lg:gap-x-6">
-                <h3 className="flex-1 text-center sm:text-left">
+                <div className="flex-1 text-center sm:text-left">
                   <PageTitle title={props.title} />
-                </h3>
+                </div>
                 <form
                   action="#"
                   method="GET"
