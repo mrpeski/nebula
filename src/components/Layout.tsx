@@ -100,8 +100,8 @@ export default function Layout(props: Props) {
               />
             </form>
           </div>
-          <main className="py-10">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <main className="py-10 bg-white sm:bg-soar-gray-1">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
               {props.children}
             </div>
           </main>
