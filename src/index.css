@@ -3,11 +3,13 @@
 @theme {
   --font-sans: InterVariable, sans-serif;
   --font-lato: Lato, sans-serif;
-  --soar-dark-blue: #343c6a;
-  --soar-light-blue: #718ebf;
-  --soar-black: #232323;
-  --soar-gray-4: #b1b1b1;
-  --soar-gray-3: #dfeaf2;
-  --soar-gray-2: #e6eff5;
-  --soar-gray-1: ##f5f7fa;
+  --color-soar-dark-blue: #343c6a;
+  --color-soar-light-blue: #718ebf;
+  --color-soar-black: #232323;
+  --color-soar-gray-4: #b1b1b1;
+  --color-soar-gray-3: #dfeaf2;
+  --color-soar-gray-2: #e6eff5;
+  --color-soar-gray-1: #f5f7fa;
+  --color-soar-green: #41d4a8;
+  --color-soar-red: #ff4b4a;
 }
