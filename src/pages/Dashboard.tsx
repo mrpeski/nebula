@@ -1,5 +1,6 @@
 import Section from "../components/Section";
 import Layout from "../components/Layout";
+import RecentTransactions from "../components/RecentTransactions";
 
 function Dashboard() {
   return (
@@ -19,7 +20,9 @@ function Dashboard() {
             </Section>
           </div>
           <div className="w-full sm:w-auto sm:flex-1">
-            <Section title="Recent Transactions">Row 1, Column 2</Section>
+            <Section title="Recent Transactions">
+              <RecentTransactions />
+            </Section>
           </div>
         </div>
         <div className="flex flex-wrap gap-4">
