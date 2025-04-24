@@ -8,7 +8,7 @@ import {
   User,
   Service,
   Settings,
-} from "./components/soar-nav-icons/dist";
+} from "./components/soar-nav-icons/dist/index.ts";
 
 export const navigation = [
   { name: "Dashboard", href: "/", icon: Home },
