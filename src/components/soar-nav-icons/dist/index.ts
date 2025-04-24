@@ -1,0 +1,9 @@
+export { default as CreditCard } from "./CreditCard";
+export { default as Econometrics1 } from "./Econometrics1";
+export { default as EconomicInvestment } from "./EconomicInvestment";
+export { default as Home } from "./Home";
+export { default as Loan } from "./Loan";
+export { default as Service } from "./Service";
+export { default as Settings } from "./Settings";
+export { default as Transfer } from "./Transfer";
+export { default as User } from "./User";
