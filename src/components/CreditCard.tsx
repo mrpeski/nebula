@@ -1,4 +1,3 @@
-import React from "react";
 import darkChip from "../assets/Chip_Card_bl.png";
 import lightChip from "../assets/Chip_Card_wh.png";
 import darkMC from "../assets/mc-dark.png";
@@ -11,15 +10,15 @@ interface CreditCardDetails {
   cvv: string;
   balance: number;
 }
-
+type CreditCardType = "black" | "white";
 interface CreditCardProps {
   details: CreditCardDetails;
-  type: "black" | "white";
+  type: CreditCardType;
 }
 interface CardInfoProps {
   label: string;
   value: string | number;
-  cardType: "black" | "white";
+  cardType: CreditCardType;
 }
 const CardInfo = (props: CardInfoProps) => {
   const textColor =
@@ -34,7 +33,7 @@ const CardInfo = (props: CardInfoProps) => {
     currency: "USD",
     minimumFractionDigits: 0,
     maximumFractionDigits: 2,
-  }).format(props.value);
+  }).format(props.value as number);
   const formatedValue =
     props.label === "Balance" ? formattedAmount : props.value;
 

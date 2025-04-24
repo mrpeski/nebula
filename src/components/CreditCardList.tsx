@@ -1,6 +1,8 @@
 import React from "react";
 import CreditCard from "./CreditCard"; // Adjust the import path as necessary
 
+type CreditCardType = "black" | "white";
+
 const CreditCardList: React.FC = () => {
   const cards = [
     {
@@ -59,7 +61,11 @@ const CreditCardList: React.FC = () => {
     <div className="w-full flex-wrap overflow-x-auto">
       <div className="w-full flex gap-4">
         {cards.map((card, index) => (
-          <CreditCard key={index} details={card.details} type={card.type} />
+          <CreditCard
+            key={index}
+            details={card.details}
+            type={card.type as CreditCardType}
+          />
         ))}
       </div>
     </div>

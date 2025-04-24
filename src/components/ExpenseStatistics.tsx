@@ -1,5 +1,15 @@
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 
+interface CustomizedLabelProps {
+  cx: number;
+  cy: number;
+  midAngle: number;
+  innerRadius: number;
+  outerRadius: number;
+  percent: number;
+  index: number;
+}
+
 const data = [
   { name: "Bill Expense", value: 54 },
   { name: "Others", value: 126 },
@@ -19,7 +29,7 @@ const renderCustomizedLabel = ({
   outerRadius,
   percent,
   index,
-}) => {
+}: CustomizedLabelProps) => {
   const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
   const x = cx + radius * Math.cos(-midAngle * RADIAN);
   const y = cy + radius * Math.sin(-midAngle * RADIAN);
@@ -66,7 +76,7 @@ const ExpenseStatisticsChart = () => {
             fill="#8884d8"
             dataKey="value"
           >
-            {data.map((entry, index) => (
+            {data.map((_, index) => (
               <Cell
                 key={`cell-${index}`}
                 fill={COLORS[index % COLORS.length]}

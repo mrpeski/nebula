@@ -14,7 +14,7 @@ interface Transaction {
 }
 
 const Transaction: React.FC<Transaction> = (props) => {
-  const icons = {
+  const icons: Record<string, any> = {
     paypal: paypalIcon,
     card: cardIcon,
     bank: dollarGreeenIcon,
