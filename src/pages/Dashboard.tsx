@@ -1,11 +1,18 @@
 import Section from "../components/Section";
 import Layout from "../components/Layout";
-import RecentTransactions from "../components/RecentTransactions";
-import CreditCardList from "../components/CreditCardList";
-import ExpenseStatisticsChart from "../components/ExpenseStatistics";
-import BalanceHistoryChart from "../components/BalanceHistory";
-import WeeklyActivity from "../components/WeeklyActivity";
-import QuickTransfer from "../components/QuickTransfer";
+import React from "react";
+const RecentTransactions = React.lazy(
+  () => import("../components/RecentTransactions"),
+);
+const CreditCardList = React.lazy(() => import("../components/CreditCardList"));
+const ExpenseStatisticsChart = React.lazy(
+  () => import("../components/ExpenseStatistics"),
+);
+const BalanceHistoryChart = React.lazy(
+  () => import("../components/BalanceHistory"),
+);
+const WeeklyActivity = React.lazy(() => import("../components/WeeklyActivity"));
+const QuickTransfer = React.lazy(() => import("../components/QuickTransfer"));
 
 function Dashboard() {
   return (
