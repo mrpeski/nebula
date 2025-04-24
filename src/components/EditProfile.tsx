@@ -1,11 +1,7 @@
 import React from "react";
 import userAvatar from "../assets/user.png";
 
-interface EditProfileProps {
-  // Define any props the component might need here
-}
-
-const EditProfile: React.FC<EditProfileProps> = (props) => {
+const EditProfile: React.FC = () => {
   return (
     <>
       <div className="sm:flex justify-start gap-4">
