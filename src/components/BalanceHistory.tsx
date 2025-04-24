@@ -1,3 +1,4 @@
+import React from "react";
 import {
   AreaChart,
   Area,
@@ -7,46 +8,21 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-
-const data = [
-  {
-    name: "Jan",
-    amt: 2400,
-  },
-  {
-    name: "Feb",
-    amt: 2800,
-  },
-  {
-    name: "Mar",
-    amt: 2000,
-  },
-  {
-    name: "Apr",
-    amt: 3000,
-  },
-  {
-    name: "May",
-    amt: 1500,
-  },
-  {
-    name: "Jun",
-    amt: 3500,
-  },
-  {
-    name: "Jul",
-    amt: 1800,
-  },
-];
+import { useGetChartsQuery } from "../apiSlice";
 
 const BalanceHistoryChart = () => {
+  const { data: chartsData, error, isLoading } = useGetChartsQuery();
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
+
   return (
     <div className="p-2 sm:p-4 sm:py-7 bg-white sm:rounded-4xl h-[214px] sm:h-[276px]">
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart
           width={500}
           height={400}
-          data={data}
+          data={chartsData.data.balanceHistory}
           margin={{
             top: 10,
             right: 30,
