@@ -1,14 +1,12 @@
-import {
-  Home,
-  CreditCard,
-  Econometrics1,
-  EconomicInvestment,
-  Loan,
-  Transfer,
-  User,
-  Service,
-  Settings,
-} from "./components/soar-nav-icons/dist/index.ts";
+import Home from "./components/soar-nav-icons/dist/Home";
+import CreditCard from "./components/soar-nav-icons/dist/CreditCard";
+import Econometrics1 from "./components/soar-nav-icons/dist/Econometrics1";
+import EconomicInvestment from "./components/soar-nav-icons/dist/EconomicInvestment";
+import Loan from "./components/soar-nav-icons/dist/Loan";
+import Transfer from "./components/soar-nav-icons/dist/Transfer";
+import User from "./components/soar-nav-icons/dist/User";
+import Service from "./components/soar-nav-icons/dist/Service";
+import Settings from "./components/soar-nav-icons/dist/Settings";
 
 export const navigation = [
   { name: "Dashboard", href: "/", icon: Home },
