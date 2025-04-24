@@ -9,36 +9,44 @@ import {
   ShieldCheckIcon,
 } from "@heroicons/react/24/outline";
 
+import {
+  Home,
+  CreditCard,
+  Econometrics1,
+  EconomicInvestment,
+  Loan,
+  Transfer,
+  User,
+  Service,
+  Settings,
+} from "./components/soar-nav-icons/dist";
+
 export const navigation = [
-  { name: "Dashboard", href: "/", icon: HomeIcon, current: true },
+  { name: "Dashboard", href: "/", icon: Home },
   {
     name: "Transactions",
     href: "/transactions",
-    icon: DocumentDuplicateIcon,
-    current: false,
+    icon: Transfer,
   },
-  { name: "Accounts", href: "/accounts", icon: UsersIcon, current: false },
+  { name: "Accounts", href: "/accounts", icon: User },
   {
     name: "Investments",
     href: "/investments",
-    icon: ChartPieIcon,
-    current: false,
+    icon: EconomicInvestment,
   },
   {
     name: "Credit Cards",
     href: "/credit-cards",
-    icon: CreditCardIcon,
-    current: false,
+    icon: CreditCard,
   },
-  { name: "Loans", href: "/loans", icon: FolderIcon, current: false },
-  { name: "Services", href: "/services", icon: Cog6ToothIcon, current: false },
+  { name: "Loans", href: "/loans", icon: Loan },
+  { name: "Services", href: "/services", icon: Service },
   {
     name: "My Privileges",
     href: "/my-privileges",
-    icon: ShieldCheckIcon,
-    current: false,
+    icon: Econometrics1,
   },
-  { name: "Settings", href: "/settings", icon: Cog6ToothIcon, current: false },
+  { name: "Settings", href: "/settings", icon: Settings },
 ];
 
 export function classNames(...classes: string[]) {
