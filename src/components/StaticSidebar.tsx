@@ -1,6 +1,5 @@
 import logo from "../assets/soar-task.svg";
 import SideNav from "./SideNav";
-import React from "react";
 
 function StaticSidebar() {
   return (

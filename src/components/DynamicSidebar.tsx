@@ -5,7 +5,6 @@ import {
   TransitionChild,
 } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { classNames, navigation } from "../navConfig";
 import { useSidebar } from "./SidebarContext";
 import SideNav from "./SideNav";
 

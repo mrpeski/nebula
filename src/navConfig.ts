@@ -1,15 +1,4 @@
 import {
-  ChartPieIcon,
-  Cog6ToothIcon,
-  DocumentDuplicateIcon,
-  FolderIcon,
-  HomeIcon,
-  UsersIcon,
-  CreditCardIcon,
-  ShieldCheckIcon,
-} from "@heroicons/react/24/outline";
-
-import {
   Home,
   CreditCard,
   Econometrics1,
