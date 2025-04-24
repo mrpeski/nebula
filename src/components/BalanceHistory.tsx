@@ -10,10 +10,10 @@ import {
 import { useGetChartsQuery } from "../apiSlice";
 
 const BalanceHistoryChart = () => {
-  const { data: chartsData, error, isLoading } = useGetChartsQuery();
+  const { data: chartsData, error, isLoading } = useGetChartsQuery(undefined);
 
   if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+  if (error) return <div>Error: {error.toString()}</div>;
 
   return (
     <div className="p-2 sm:p-4 sm:py-7 bg-white sm:rounded-4xl h-[214px] sm:h-[276px]">

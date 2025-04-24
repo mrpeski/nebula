@@ -48,16 +48,20 @@ const FavoriteButton: React.FC<FavButtonProps> = ({
 const QuickTransfer: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
-  const { data: favoriteList, error, isLoading } = useGetFavoritesQuery();
+  const {
+    data: favoriteList,
+    error,
+    isLoading,
+  } = useGetFavoritesQuery(undefined);
 
   if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+  if (error) return <div>Error: {error.toString()}</div>;
 
   return (
     <div className="flex flex-col gap-4 p-2 pb-9 sm:p-4 bg-white sm:rounded-4xl h-[214px] sm:h-[276px]">
       <div className="flex items-center">
         <ul className="flex gap-2 overflow-auto mb-7">
-          {favoriteList.data?.map((favorite, index) => (
+          {favoriteList.data?.map((favorite: Favorite, index: number) => (
             <li key={index}>
               <FavoriteButton
                 {...favorite}

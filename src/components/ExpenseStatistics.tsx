@@ -22,7 +22,6 @@ const renderCustomizedLabel = ({
   innerRadius,
   outerRadius,
   percent,
-  index,
 }: CustomizedLabelProps) => {
   const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
   const x = cx + radius * Math.cos(-midAngle * RADIAN);
@@ -56,10 +55,10 @@ const renderCustomizedLabel = ({
 };
 
 const ExpenseStatisticsChart = () => {
-  const { data: chartsData, error, isLoading } = useGetChartsQuery();
+  const { data: chartsData, error, isLoading } = useGetChartsQuery(undefined);
 
   if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+  if (error) return <div>Error: {error.toString()}</div>;
 
   return (
     <div className="p-2 sm:p-4 bg-white sm:rounded-4xl h-[214px] sm:h-[322px]">
@@ -75,7 +74,7 @@ const ExpenseStatisticsChart = () => {
             fill="#8884d8"
             dataKey="value"
           >
-            {chartsData?.data.expenseStats.map((_, index) => (
+            {chartsData?.data.expenseStats.map((_: any, index: number) => (
               <Cell
                 key={`cell-${index}`}
                 fill={COLORS[index % COLORS.length]}

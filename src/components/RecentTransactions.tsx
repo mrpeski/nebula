@@ -65,15 +65,15 @@ const RecentTransactions: React.FC = () => {
     data: transactions,
     error,
     isLoading,
-  } = useGetRecentTransactionsQuery();
+  } = useGetRecentTransactionsQuery(undefined);
 
   if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+  if (error) return <div>Error: {error.toString()}</div>;
 
   return (
     <div className="p-2 sm:p-4 bg-white sm:rounded-4xl h-[214px] sm:h-[235px]">
       <div className="flex flex-col gap-3 overflow-y-auto h-[162px] sm:h-[200px] sm:rounded-3xl">
-        {transactions?.data?.map((transaction) => (
+        {transactions?.data?.map((transaction: Transaction) => (
           <Transaction key={transaction.id} {...transaction} />
         ))}
       </div>

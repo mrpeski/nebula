@@ -5,15 +5,15 @@ import { useGetCardsQuery } from "../apiSlice";
 type CreditCardType = "black" | "white";
 
 const CreditCardList: React.FC = () => {
-  const { data: cards, error, isLoading } = useGetCardsQuery();
+  const { data: cards, error, isLoading } = useGetCardsQuery(undefined);
 
   if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+  if (error) return <div>Error: {error.toString()}</div>;
 
   return (
     <div className="w-full flex-wrap overflow-x-auto">
       <div className="w-full flex gap-4">
-        {cards?.data?.map((card, index) => (
+        {cards?.data?.map((card: any, index: number) => (
           <CreditCard
             key={index}
             details={card.details}
