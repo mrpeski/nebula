@@ -1,7 +1,8 @@
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router";
-import Dashboard from "./pages/Dashboard";
-import Settings from "./pages/Settings";
-import Blank from "./pages/Blank";
+const Dashboard = React.lazy(() => import("./pages/Dashboard"));
+const Settings = React.lazy(() => import("./pages/Settings"));
+const Blank = React.lazy(() => import("./pages/Blank"));
 
 function App() {
   return (

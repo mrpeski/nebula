@@ -1,11 +1,18 @@
 import Section from "../components/Section";
 import Layout from "../components/Layout";
-import RecentTransactions from "../components/RecentTransactions";
-import CreditCardList from "../components/CreditCardList";
-import ExpenseStatisticsChart from "../components/ExpenseStatistics";
-import BalanceHistoryChart from "../components/BalanceHistory";
-import WeeklyActivity from "../components/WeeklyActivity";
-import QuickTransfer from "../components/QuickTransfer";
+import React from "react";
+const RecentTransactions = React.lazy(
+  () => import("../components/RecentTransactions"),
+);
+const CreditCardList = React.lazy(() => import("../components/CreditCardList"));
+const ExpenseStatisticsChart = React.lazy(
+  () => import("../components/ExpenseStatistics"),
+);
+const BalanceHistoryChart = React.lazy(
+  () => import("../components/BalanceHistory"),
+);
+const WeeklyActivity = React.lazy(() => import("../components/WeeklyActivity"));
+const QuickTransfer = React.lazy(() => import("../components/QuickTransfer"));
 
 function Dashboard() {
   return (
@@ -13,9 +20,7 @@ function Dashboard() {
       <div className="flex flex-col space-y-4">
         <div className="flex flex-wrap gap-4">
           <div className="w-full sm:w-2/3 sm:flex-2 flex-wrap">
-            <Section title="My Cards">
-              <CreditCardList />
-            </Section>
+            <CreditCardList />
           </div>
           <div className="w-full sm:w-1/3 sm:flex-1">
             <Section title="Recent Transactions">
