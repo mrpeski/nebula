@@ -13,9 +13,7 @@ function Dashboard() {
       <div className="flex flex-col space-y-4">
         <div className="flex flex-wrap gap-4">
           <div className="w-full sm:w-2/3 sm:flex-2 flex-wrap">
-            <Section title="My Cards">
-              <CreditCardList />
-            </Section>
+            <CreditCardList />
           </div>
           <div className="w-full sm:w-1/3 sm:flex-1">
             <Section title="Recent Transactions">
